@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="mystyles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Yellowtail">
+        <title>Artwork</title>
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+        <script>
+            let currentImage = 0;
+
+            function imagechanger(n) {
+                currentImage += n;
+                showImage(currentImage);
+            }
+
+            function imageselector(n) {
+                currentImage = n;
+                showImage(currentImage);
+            }
+
+            function showImage(n) {
+                let i = 0;
+                let photos = document.getElementsByClassName("radial-album");
+                let dots = document.getElementsByClassName("image-dot");
+                if (n + 1 > photos.length) {
+                    currentImage = 0;
+                }
+                if (n < 0) {
+                    currentImage = photos.length - 1;
+                }
+                for (i = 0; i < photos.length; i++) {
+                    photos[i].style.display = "none";
+                    dots[i].className = dots[i].className.replace( "active", "");
+                }
+                photos[currentImage].style.display = "block";
+                dots[currentImage].className += " active";
+            }
+
+            let currentImage2 = 0;
+
+            function imagechanger2(n) {
+                currentImage2 += n;
+                showImage2(currentImage2);
+            }
+
+            function imageselector2(n) {
+                currentImage2 = n;
+                showImage2(currentImage2);
+            }
+
+            function showImage2(n) {
+                let i = 0;
+                let photos2 = document.getElementsByClassName("company-album");
+                let dots2 = document.getElementsByClassName("image-dot-2");
+                if (n + 1 > photos2.length) {
+                    currentImage2 = 0;
+                }
+                if (n < 0) {
+                    currentImage2 = photos2.length - 1;
+                }
+                for (i = 0; i < photos2.length; i++) {
+                    photos2[i].style.display = "none";
+                    dots2[i].className = dots2[i].className.replace( "active", "");
+                }
+                photos2[currentImage2].style.display = "block";
+                dots2[currentImage2].className += " active";
+            }
+        </script>
+    </head>
+    <body onload = "showImage(0); showImage2(0);">
+        <header>
+            <div class="nav-container">
+                <a class="left-justify" href="index.html">Shane Carr</a>
+                <nav class="navbar" id="navbar">
+                    <ul>
+                        <li><a class="unbold-nav vanish" href="index.html">Home</a></li>
+                        <li><a class="unbold-nav vanish" href="curriculum.html">Curriculum Vitae</a></li>
+                        <li><a class="unbold-nav vanish" href="research.html">Research</a></li>
+                        <li><a class="bold-nav vanish" href="artwork.html">Art</a></li>
+                        <li><a class="unbold-nav vanish" href="#contact">Contact</a></li>
+                        <li><a class="vanish"><button class="icon-sun-icon" id="dark-mode-button"></button></a></li>
+                    </ul>
+                </nav>
+                <div class="menu-button">
+                    <div class="button-visual"></div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section id="artwork-radial" class="research-section">
+                <h2 class="research-heading">Radial I</h2>
+                <h4 class="artwork-subheading">Acrylic on canvas; 2019</h4>
+                <div class="radial-container">
+                    <div class="radial-album">
+                        <img class="artwork-image-radial" src="../images/radial1-1.jpg">
+                    </div>
+                    <div class="radial-album">
+                        <img class="artwork-image-radial-shrink" src="../images/radial1-2.jpg">
+                    </div>
+                    <div class="radial-album">
+                        <img class="artwork-image-radial" src="../images/radial1-3.jpg">
+                    </div>
+                    <a class="radial-prev" onclick="imagechanger(-1)">❮</a>
+                    <a class="radial-next" onclick="imagechanger(1)">❯</a>
+                    <div class="dot-container">
+                        <div class="image-dot active" onclick="imageselector(0)"></div>
+                        <div class="image-dot" onclick="imageselector(1)"></div>
+                        <div class="image-dot" onclick="imageselector(2)"></div>
+                    </div>
+                </div>
+                <p class="research-text">I was inspired by the abstract, simple, and bold use of primary colors in the many pieces by Piet Mondrian, such as his famous Composition II in Red, Blue, and Yellow. I also liked the idea of breaking the piece apart into multiple canvases, leaving the rest of the circles to be filled in by the imagination.</p>
+            </section>
+            <section id="artwork-company" class="research-section">
+                <h2 class="research-heading">Everyday Company</h2>
+                <h4 class="artwork-subheading">Acrylic on canvas; 2021</h4>
+                <div class="radial-container">
+                    <div class="company-album">
+                        <img class="artwork-image-radial" src="../images/company1.jpg">
+                    </div>
+                    <div class="company-album">
+                        <img class="artwork-image-radial" src="../images/company2.jpg">
+                    </div>
+                    <div class="company-album">
+                        <img class="artwork-image-radial" src="../images/company3.jpg">
+                    </div>
+                    <a class="company-prev" onclick="imagechanger2(-1)">❮</a>
+                    <a class="company-next" onclick="imagechanger2(1)">❯</a>
+                    <div class="dot-container">
+                        <div class="image-dot-2 active" onclick="imageselector2(0)"></div>
+                        <div class="image-dot-2" onclick="imageselector2(1)"></div>
+                        <div class="image-dot-2" onclick="imageselector2(2)"></div>
+                    </div>
+                </div>
+                <p class="research-text">I was inspired by the pop art of Andy Warhol depicting everyday objects in outlandish colors, such as his famous Campbell's Soup Cans. Smart phones and social media are likely the most frequently viewed objects in our lives. A daily essential, they provide a comforting, yet somewhat ominous, companionship.</p>
+            </section>
+        </main>
+        <footer id="contact"> 
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <p class="footer-logo-text">SC</p>
+                </div>
+                <div class="footer-contact">
+                    <p class="footer-text-bold">Contact Shane Carr</p>
+                    <p class="footer-text">Email: shane.g.carr@vanderbilt.edu</p>
+                    <p class="footer-text">Phone: (480)-209-2914</p>
+                </div>
+            </div>
+        </footer>
+        <script src="../scripts/darkmode.js"></script>
+        <script src="../scripts/menu-button.js"></script>
+    </body>
+</html>
