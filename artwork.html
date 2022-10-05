@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="mystyles.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Yellowtail">
         <title>Artwork</title>
-        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="docs/assets/favicon.ico">
         <script>
             let currentImage = 0;
 
@@ -67,6 +67,24 @@
                 photos2[currentImage2].style.display = "block";
                 dots2[currentImage2].className += " active";
             }
+
+            let touchstartX = 0
+            let touchendX = 0
+    
+            function checkDirection() {
+            if (touchendX < touchstartX) {imagechanger(1)};
+            if (touchendX > touchstartX) {imagechanger(-1)};
+            }
+
+            photos.addEventListener('touchstart', e => {
+            touchstartX = e.changedTouches[0].screenX;
+            })
+
+            document.addEventListener('touchend', e => {
+            touchendX = e.changedTouches[0].screenX;
+            checkDirection();
+            })
+
         </script>
     </head>
     <body onload = "showImage(0); showImage2(0);">
@@ -76,9 +94,9 @@
                 <nav class="navbar" id="navbar">
                     <ul>
                         <li><a class="unbold-nav vanish" href="index.html">Home</a></li>
-                        <li><a class="unbold-nav vanish" href="curriculum.html">Curriculum Vitae</a></li>
+                        <li><a class="unbold-nav vanish" href="curriculum.html">CV</a></li>
                         <li><a class="unbold-nav vanish" href="research.html">Research</a></li>
-                        <li><a class="bold-nav vanish" href="artwork.html">Art</a></li>
+                        <li><a class="bold-nav vanish" href="artwork.html">Artwork</a></li>
                         <li><a class="unbold-nav vanish" href="#contact">Contact</a></li>
                         <li><a class="vanish"><button class="icon-sun-icon" id="dark-mode-button"></button></a></li>
                     </ul>
