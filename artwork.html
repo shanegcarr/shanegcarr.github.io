@@ -67,24 +67,6 @@
                 photos2[currentImage2].style.display = "block";
                 dots2[currentImage2].className += " active";
             }
-
-            let touchstartX = 0
-            let touchendX = 0
-    
-            function checkDirection() {
-            if (touchendX < touchstartX) {imagechanger(1)};
-            if (touchendX > touchstartX) {imagechanger(-1)};
-            }
-
-            photos.addEventListener('touchstart', e => {
-            touchstartX = e.changedTouches[0].screenX;
-            })
-
-            document.addEventListener('touchend', e => {
-            touchendX = e.changedTouches[0].screenX;
-            checkDirection();
-            })
-
         </script>
     </head>
     <body onload = "showImage(0); showImage2(0);">
