@@ -2,6 +2,7 @@ let menuOpen = "closed";
 sessionStorage.setItem("menuOpen", "closed");
 const menuToggle = document.querySelector(".menu-button");
 const navBar = document.querySelector("#navbar");
+//const windowFull = document.getElementById("tester");
 
 const openMenu = () => {
     navBar.classList.add("navbar-open");
@@ -23,3 +24,16 @@ menuToggle.addEventListener("click", function(){
      closeMenu();
     }
  });
+
+ //windowFull.addEventListener("click", function() {
+//    console.log("big chungus");
+// });
+
+document.addEventListener('click', function handleClickOutsideBox(event) {
+    const box = document.getElementById('navbar');
+    
+    if (!box.contains(event.target) && !menuToggle.contains(event.target)) {
+      //box.style.display = 'none';
+      closeMenu();
+    }
+  });
