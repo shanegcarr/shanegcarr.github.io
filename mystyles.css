@@ -840,11 +840,11 @@ footer::after {
 
 @font-face {
     font-family: 'icomoon';
-    src:  url('../fonts/icomoon.eot?vzfyvw');
-    src:  url('../fonts/icomoon.eot?vzfyvw#iefix') format('embedded-opentype'),
-      url('../fonts/icomoon.ttf?vzfyvw') format('truetype'),
-      url('../fonts/icomoon.woff?vzfyvw') format('woff'),
-      url('../fonts/icomoon.svg?vzfyvw#icomoon') format('svg');
+    src:  url('docs/assets/icomoon.eot?vzfyvw');
+    src:  url('docs/assets/icomoon.eot?vzfyvw#iefix') format('embedded-opentype'),
+      url('docs/assets/icomoon.ttf?vzfyvw') format('truetype'),
+      url('docs/assets/icomoon.woff?vzfyvw') format('woff'),
+      url('docs/assets/icomoon.svg?vzfyvw#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
